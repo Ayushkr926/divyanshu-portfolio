@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-import styles from "./Praygraj.module.css";
+import styles from "./praygraj.module.css";
 import image1 from "../../assets/praygraj.jpg";
 import image2 from "../../assets/praygraj2.jpg";
 
