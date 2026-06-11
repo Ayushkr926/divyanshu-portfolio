@@ -7,7 +7,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Video from "./Components/Video/Video";
 import Village from "./Components/village/village";
 import Praygraj from "./Components/praygraj/praygraj";
-import Banaras from "./Components/Banaras/Banaras";
+import Banaras from "./Components/banaras/banaras";
 import Kumbh from "./Components/Kumbh/Kumbh";
 import Insta from "./Components/insta/insta";
 import Story from "./Components/village/story/story";
