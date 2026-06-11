@@ -1,0 +1,109 @@
+.container {
+  position: relative;
+  height: 100vh;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.light{
+  background-color: #E4E1EC;
+  color: #1a4572;
+}
+
+.name {
+  position: relative;
+  text-align: center;
+  top: 10%;
+  z-index: 2;
+}
+
+.name h1 {
+  font-size: 6rem;
+  position: relative;
+}
+
+.name h1:first-child {
+  z-index: 5; /* Divyanshu - above image */
+  position: relative;
+  top: 120px;
+}
+
+.top{
+  font-size: 6rem;
+  text-align: center;
+  position: absolute;
+  top: 15%;
+  z-index: 7;
+    will-change: transform;
+  left: 35%;
+}
+.dark .profile {
+  z-index: 2; /* image in middle */
+  position: absolute;
+  top: 50%; /* adjust as needed */
+    will-change: transform;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20%;
+  height: 40%;
+  background-image: url("../../../../assets/divya.jpg");
+  background-size: cover;
+  border-radius: 25px;
+  box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.1);
+}
+.light .profile {
+  z-index: 2; /* image in middle */
+  position: absolute;
+  top: 50%; /* adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+    will-change: transform;
+  width: 20%;
+  height: 40%;
+  background-image: url("../../../../assets/lightprofile.jpg");
+  background-size: cover;
+  border-radius: 25px;
+  box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.name h1:last-child {
+  z-index: 1; /* Creates - behind image */
+  position: relative;
+}
+
+
+.paragraph {
+  max-width: 700px;
+  margin: 3rem auto 0;
+  line-height: 1.7;
+  font-size: 1rem;
+  color: white;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  font-weight: bold;
+  color: black;
+  flex-wrap: wrap;
+  justify-content: center;
+  top: 50%;
+  word-break: break-word;
+  will-change: transform;
+}
+
+.paragraph span {
+  display: inline-block;
+  white-space: pre;
+  will-change: transform ;
+  font-family: 'Poppins', sans-serif;
+  /* opacity: 0; */
+  color: black;
+  display: inline-block;
+}
+
+.light .paragraph span{
+  color: #1a4572;
+}
+
+.dark .paragraph span{
+  color: white;
+}

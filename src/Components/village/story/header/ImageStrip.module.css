@@ -1,0 +1,30 @@
+.wrapper {
+  width: 160vw;
+  height: 20vh;
+  overflow: hidden;
+  position: relative;
+  background-color: #111;
+  transform: rotate(-5deg);
+  background-color: white;
+  padding: 10px 1px;
+  margin-bottom: 9rem;
+}
+
+.strip {
+  display: flex;
+  height: 100%;
+  width: fit-content;
+  padding: 0px 12px;
+  will-change: transform;
+}
+
+.strip img {
+  width: 20vw;
+  height: 20vh;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  margin: 0px 2px;
+  
+}

@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+
+.Navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  padding: 0px 24px;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  backdrop-filter: blur(40px);
+  transition: all 0.3s ease;
+  flex-wrap: wrap;
+}
+
+.light .Navbar {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.dark .Navbar {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.left,
+.right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+}
+
+.right {
+  position: relative;
+  right: 70px;
+
+}
+
+.center {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  width: 50%;
+  position: relative;
+  right: 20px;
+}
+
+.center a {
+  text-decoration: none;
+}
+
+.center a:hover {
+  opacity: 0.85;
+}
+
+
+/* Link Styles */
+.left a,
+.right a {
+  text-decoration: none;
+  color: inherit;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-family: 'Mint Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.left a:hover,
+.right a:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Toggle Button */
+.toggleBtn {
+  background-color: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+  padding: 6px 14px;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+  position: relative;
+  bottom: 15px;
+  border-radius: 20px;
+  font-size: 11px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.toggleBtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Theme-Specific Styling */
+.dark a,
+.dark .toggleBtn {
+  color: white;
+  border-color: white;
+}
+
+.light a,
+.light .toggleBtn {
+  color: #1A4572;
+  border-color: #1A4572;
+}
+
+.light a:hover {
+  background-color: rgba(26, 69, 114, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .Navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .left,
+  .center,
+  .right {
+    width: 100%;
+    margin-bottom: 12px;
+    justify-content: flex-start;
+    position: static;
+  }
+
+  .center {
+    text-align: left;
+    font-size: 22px;
+  }
+
+  .right {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  
+
+  .toggleBtn {
+    bottom: 15px;
+    font-size: 10px;
+  }
+}

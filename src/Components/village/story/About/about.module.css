@@ -1,0 +1,46 @@
+.container {
+  position: relative;
+  height: 100vh;
+  padding: 2rem 10rem;
+  /* overflow: hidden; */
+}
+
+.light{
+  background-color: #E4E1EC;
+  color: #1a4572;
+}
+
+
+.about {
+    display: flex;
+  position: relative;
+  justify-content: space-between;
+}
+
+
+.left {
+  width: 60%;
+  padding: 0 2rem;
+}
+.top {
+  font-size: 1.5rem;
+  width: 90%;
+  text-align: center;
+}
+.top img{
+    width: 408px;
+    height: 534px;
+    border-radius: 10px;
+}
+
+.right {
+  width: 60%;
+  padding: 0 2rem;
+  padding: 7rem 0;
+}
+
+.right p{
+    font-size: 1rem;
+    line-height: 2rem;
+    font-weight: bold;
+}

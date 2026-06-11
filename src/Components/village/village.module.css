@@ -1,0 +1,260 @@
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  height: 90vh;
+  background-color: black;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Text wrapper */
+.text {
+  max-width: 900px;
+  padding: 1rem;
+  position: relative;
+  top: -50px;
+}
+
+/* Heading */
+.heading {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.dark .heading {
+  color: #f0f0f0;
+}
+
+.light .heading {
+  color: #1A4572;
+}
+
+/* Paragraph */
+.text p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  font-family: "Poppins", sans-serif;
+  margin-top: 1rem;
+  transition: color 0.3s ease;
+}
+
+.dark .text p {
+  color: #ccc;
+}
+
+.light .text p {
+  color: #222;
+}
+
+/* Images */
+.image1,
+.image2,
+.image3 {
+  height: 4rem;
+  width: auto;
+  vertical-align: middle;
+  margin: 0 0.4rem;
+  border-radius: 12px;
+  object-fit: cover;
+  filter: blur(10px);
+  opacity: 0;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.6s ease-out, opacity 0.6s ease-out;
+  animation: unblur 0.6s ease-out forwards;
+}
+
+.image1:hover {
+  transform: scale(1.6) rotate(-2deg);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.image2:hover {
+  transform: scale(1.6) rotate(3deg);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.image3:hover {
+  transform: scale(1.7) rotate(-3deg);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes unblur {
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+
+/* Dot Animation */
+.dots {
+  display: inline-block;
+}
+
+.dot {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: inherit;
+  animation: bounceDot 2s infinite ease-in-out;
+  animation-fill-mode: both;
+  margin: 0 2px;
+}
+
+@keyframes bounceDot {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-8px) scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(0) scale(0.95);
+    opacity: 0.6;
+  }
+}
+
+/* Button */
+button {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  border: 2px solid #ffffffaa;
+  background-color: transparent;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Light & Dark Mode */
+.dark {
+  background-color: #0a0a0a;
+  color: #f0f0f0;
+}
+
+.light {
+  background-color: #E4E1EC;
+  color: #1A4572;
+}
+
+.dark button {
+  background-color: #ffffff10;
+  color: #f0f0f0;
+  border: 2px solid #ffffff66;
+}
+
+.dark button:hover {
+  background-color: #ffffffdd;
+  color: #000;
+}
+
+.light button {
+  background-color: #00000010;
+  color: #1A4572;
+  border: 2px solid #00000033;
+}
+
+.light button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heading {
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
+  }
+
+  .image1,
+  .image2,
+  .image3 {
+    height: 3rem;
+    margin: 0 0.3rem;
+  }
+
+  .text p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: clamp(1.6rem, 6vw, 2rem);
+  }
+
+  .text {
+    padding: 0.5rem;
+  }
+
+  
+
+  .image1,
+  .image2,
+  .image3 {
+    height: 2.3rem;
+  }
+}
+.info{
+    font-size: 9rem;
+}
+.info span a{
+    color: white;
+  border-radius: 32px;
+  text-decoration: none;
+  transition: background-color 0.2s cubic-bezier(.215, .61, .355, 1);
+  font-weight: bold;
+  overflow: hidden;
+}
+
+
+.info span a:hover{
+background: linear-gradient(270deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  background-size: 1000% 1000%;
+  animation: textGlow 3s linear infinite;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes textGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.light .info span a {
+  color: black;
+}

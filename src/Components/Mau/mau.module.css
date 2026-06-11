@@ -1,0 +1,92 @@
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  height: 100vh;
+  background-color: #0A0A0A;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.imageWrapper {
+  position: absolute;
+  width: 100%;
+  /* background-color: blue; */
+  max-width: 600px;
+  height: 250px;
+  /* margin: 0 auto 2rem auto; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dark{
+  background-color: #0A0A0A;
+  color: white;
+}
+.light{
+  background-color: #E4E1EC;
+  color: #1a4572;
+}
+
+.image1,
+.image2 {
+  position: absolute;
+  height: 600px;
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Overlapping centered */
+.leftImage {
+  z-index: 2;
+}
+.rightImage {
+  z-index: 1;
+}
+
+.date {
+  position: relative;
+  text-align: center;
+}
+
+.place {
+  font-size: 4rem;
+  font-weight: 600;
+  margin-top: 20px;
+  line-height: 1.2;
+}
+
+.button {
+  padding: 5px 5px;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #1a4572;
+  background-color: transparent;
+  border: 2px solid #1a4572;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+.light .button:hover {
+  background-color: rgba(26, 69, 114, 0.1);
+}
+
+.dark .button {
+  color: white;
+  border-color: white;
+}
+.dark .button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
