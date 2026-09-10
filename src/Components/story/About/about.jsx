@@ -1,6 +1,5 @@
 import styles from "./about.module.css";
-import { useState } from "react";
-import image from "../../../../assets/profile.jpg";
+import image from "../../../assets/profile.jpg";
 
 function About({ darkMode }) {
   return (
@@ -13,7 +12,7 @@ function About({ darkMode }) {
             <h1>
               Let's create<br></br> beautiful things.
             </h1>
-            <img src={image} alt="" />
+            <img src={image} alt="" loading="lazy" />
           </div>
         </div>
 

@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom"; // ✅ Make sure this is imported
 import styles from "./story.module.css";
-import Navbar from "../../Navbar/Navbar";
+import Navbar from "../Navbar/Navbar";
 import Header from "./header/header";
 import ImageStrip from "./header/Image";
 import About from "./About/about";

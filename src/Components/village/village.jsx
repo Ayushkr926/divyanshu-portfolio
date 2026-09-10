@@ -3,10 +3,9 @@ import villageImage from "../../assets/village1.jpg";
 import villageImage2 from "../../assets/village2.png";
 import villageImage3 from "../../assets/village3.png";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // ✅ Import this
-import Story from "./story/story";
+import { useNavigate } from "react-router-dom";
 
-function Village({ darkMode, setDarkMode }) {
+function Village({ darkMode }) {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,12 +24,14 @@ function Village({ darkMode, setDarkMode }) {
           A
           <img
             src={villageImage}
+            loading="lazy"
             alt="village 1"
             className={styles.image1}
           />{" "}
           tiny small <br /> village
           <img
             src={villageImage2}
+            loading="lazy"
             alt="village 2"
             className={styles.image2}
           />{" "}
@@ -47,7 +48,7 @@ function Village({ darkMode, setDarkMode }) {
               .
             </span>
           </span>
-          <img src={villageImage3} alt="village 3" className={styles.image3} />
+          <img src={villageImage3} alt="village 3" loading="lazy" className={styles.image3} />
         </h1>
 
         <p className={styles.info}>

@@ -39,7 +39,7 @@
   width: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.8s ease, opacity 0.8s ease;
+  will-change: transform;
 }
 
 /* Overlapping centered */

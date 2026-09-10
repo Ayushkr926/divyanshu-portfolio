@@ -1,5 +1,4 @@
 import styles from "./header.module.css";
-import { useRef, useEffect } from "react";
 
 function Header_stiils({ darkMode }) {
   return (

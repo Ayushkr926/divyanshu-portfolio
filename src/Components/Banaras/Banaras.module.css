@@ -39,7 +39,7 @@
   width: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.8s ease, opacity 0.8s ease;
+  will-change: transform;
 }
 
 /* Overlapping centered */
@@ -88,4 +88,20 @@
 }
 .dark .button:hover {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .container {
+    min-height: 100svh;
+    padding: 1rem;
+  }
+
+  .image1,
+  .image2 {
+    height: min(58svh, 440px);
+  }
+
+  .place {
+    font-size: clamp(2.4rem, 12vw, 4rem);
+  }
 }

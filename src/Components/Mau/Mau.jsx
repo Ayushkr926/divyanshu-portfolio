@@ -15,37 +15,26 @@ function Mau({ darkMode }) {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 80%",
-          end: "+=1500",
-          scrub: true,
-          // pin: true,
-          anticipatePin: 1,
-          markers: false,
-        },
+      const media = gsap.matchMedia();
+
+      media.add("(prefers-reduced-motion: no-preference)", () => {
+        const distance = Math.min(window.innerWidth * 0.38, 580);
+
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.1,
+            invalidateOnRefresh: true,
+            fastScrollEnd: false,
+          },
+        })
+          .to(leftImageRef.current, { x: -distance, rotation: -10, ease: "none" }, 0)
+          .to(rightImageRef.current, { x: distance, rotation: 10, ease: "none" }, 0);
       });
 
-      tl.to(
-        leftImageRef.current,
-        {
-          x: -580,
-          rotation: -10,
-          ease: "power2.out",
-        },
-        0
-      );
-
-      tl.to(
-        rightImageRef.current,
-        {
-          x: 580,
-          rotation: 10,
-          ease: "power2.out",
-        },
-        0
-      );
+      return () => media.revert();
     }, containerRef);
 
     return () => ctx.revert(); // Clean up GSAP context
@@ -60,12 +49,14 @@ function Mau({ darkMode }) {
         <img
           ref={leftImageRef}
           src={image1}
+          loading="lazy"
           alt="Image1"
           className={`${styles.image1} ${styles.leftImage}`}
         />
         <img
           ref={rightImageRef}
           src={image2}
+          loading="lazy"
           alt="Image2"
           className={`${styles.image2} ${styles.rightImage}`}
         />

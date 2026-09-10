@@ -1,0 +1,200 @@
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: clamp(6rem, 12vh, 9rem) 1.5rem clamp(5rem, 10vh, 8rem);
+  overflow: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Light / Dark */
+.light {
+  background: #E4E0EB;
+  color: #18211f;
+}
+
+.dark {
+  background: RGB(13, 13, 13);
+  color: #f3efe8;
+}
+
+/* Identity block */
+.identity {
+  text-align: center;
+  z-index: 10;
+  margin-bottom: clamp(2rem, 5vh, 3.5rem);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-bottom: 1.1rem;
+  color: #b15e3e;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.eyebrowLine {
+  width: 2.5rem;
+  height: 1px;
+  background: currentColor;
+}
+
+.creates {
+  max-width: 9ch;
+  font-size: clamp(3.5rem, 10vw, 8.5rem);
+  font-weight: 800;
+  line-height: 0.86;
+  letter-spacing: -0.06em;
+  margin: 0;
+}
+
+.creates em {
+  display: block;
+  color: #b15e3e;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.82em;
+  font-weight: 400;
+  letter-spacing: -0.07em;
+}
+
+.tagline {
+  margin: 1.4rem 0 0 7;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+.tagline span {
+  padding: 0 0.45rem;
+  color: #b15e3e;
+}
+
+/* Profile */
+.profileWrapper {
+  position: relative;
+  width: min(430px, 78vw);
+  aspect-ratio: 4 / 5;
+  margin: 0 0 3.5rem;
+  z-index: 5;
+}
+
+.profileWrapper::before,
+.profileWrapper::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.profileWrapper::before {
+  inset: 1rem -1rem -1rem 1rem;
+  /* border: 1px solid rgba(177, 94, 62, 0.55); */
+  border-radius: 18px;
+  z-index: -1;
+}
+
+.profileWrapper::after {
+  width: 5rem;
+  height: 5rem;
+  right: -1.6rem;
+  top: -1.6rem;
+  /* opacity: 0.45; */
+}
+
+.profile {
+  width: 200%;
+  height: 100%;
+  border-radius: 20px;
+  justify-self: center;
+  align-self: center;
+  background: center / cover no-repeat;
+  background-image: url("../../../assets/divya.jpg");
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  will-change: transform;
+  cursor: default;
+}
+
+.dark .profile {
+  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* Bio */
+.bio {
+  max-width: 700px;
+  text-align: left;
+  z-index: 10;
+}
+
+.bioLabel {
+  margin-bottom: 1rem;
+  color: #b15e3e;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  line-height: 1.8;
+  font-weight: 400;
+  opacity: 0.78;
+  margin: 0;
+}
+
+.scrollCue {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 3rem;
+  color: #b15e3e;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.scrollLine {
+  width: 3.5rem;
+  height: 1px;
+  background: currentColor;
+}
+
+/* Character spans inherit nicely */
+.paragraph span {
+  will-change: transform, opacity;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .container {
+    padding: 5.5rem 1.25rem 5rem;
+  }
+
+  .profileWrapper {
+    width: min(320px, 80vw);
+    margin-bottom: 2.6rem;
+  }
+
+  .creates {
+    font-size: clamp(3.4rem, 16vw, 5.3rem);
+  }
+
+  .bio {
+    max-width: 34rem;
+  }
+
+  .paragraph {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}

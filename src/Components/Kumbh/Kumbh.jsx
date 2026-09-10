@@ -15,8 +15,6 @@ function Kumbh({ darkMode }) {
   const maruti = useRef(null);
 
   useEffect(() => {
-    const container = imageContainerRef.current;
-
     // Initial zoom-in animation
     gsap.from([mainRef.current, leftRef.current, downRef.current], {
       scale: 0.8,
@@ -92,7 +90,7 @@ function Kumbh({ darkMode }) {
 
       <div className={styles.images} ref={imageContainerRef}>
         <div className={styles.mainimage} ref={mainRef}>
-          <img src={mainimage} alt="main kumbh" />
+          <img src={mainimage} alt="main kumbh" loading="lazy" />
           <div className={styles.circle}>
             <div className={styles.play}>
               <svg
@@ -111,13 +109,13 @@ function Kumbh({ darkMode }) {
         </div>
 
         <div className={styles.leftimage} ref={leftRef}>
-          <img src={imagepray} alt="pray" />
+          <img src={imagepray} alt="pray" loading="lazy" />
         </div>
         <div className={styles.downimage} ref={downRef}>
-          <img src={baba} alt="baba" />
+          <img src={baba} alt="baba" loading="lazy" />
         </div>
         <div ref={rightRef} className={styles.rightimage}>
-          <img ref={maruti} src={bajrangbali} alt="bajrangbali" />
+          <img ref={maruti} src={bajrangbali} alt="bajrangbali" loading="lazy" />
         </div>
       </div>
       <button className={styles.button}>SEE CASE STUDY</button>
