@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-import styles from "./Mau.module.css";
+import styles from "src/Components/Mau/Mau.module.css";
 import image1 from "../../assets/maupic1.jpg";
 import image2 from "../../assets/maupic2.jpg";
 
