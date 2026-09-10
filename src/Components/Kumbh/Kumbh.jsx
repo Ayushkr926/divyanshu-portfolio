@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import styles from "./Kumbh.module.css";
+import styles from "./kumbh.module.css";
 import mainimage from "../../assets/mahakumbh.jpg";
 import baba from "../../assets/baba.png";
 import imagepray from "../../assets/imagepray.png";
