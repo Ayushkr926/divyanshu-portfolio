@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom"; // ✅ Make sure this is imported
 import styles from "./stills.module.css";
 import Praygraj from "../praygraj/praygraj";
-import Banaras from "../banaras/banaras";
+import Banaras from "../Banaras/Banaras";
 import Insta from "../insta/insta";
 
 import Header_stills from "./header/header";
