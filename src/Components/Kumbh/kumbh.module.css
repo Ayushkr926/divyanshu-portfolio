@@ -22,7 +22,7 @@
 }
 
 .time p {
-  font-size: 1.3rem;
+  font-size: 0.8rem;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -31,7 +31,7 @@
 }
 
 .place h1 {
-  font-size: 4rem;
+  font-size: 2rem;
   font-family: 'Playfair Display', serif;
   font-weight: 800;
   animation: slideUp 1s ease-out;

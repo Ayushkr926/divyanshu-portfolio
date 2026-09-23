@@ -5,19 +5,26 @@ function Video({ darkMode }) {
   return (
     <section
       id="motion"
-      className={`${styles.container} ${darkMode ? styles.dark : styles.light}`}
+      className={`${styles.container} ${
+        darkMode ? styles.dark : styles.light
+      }`}
     >
       <div className={styles.videoWrapper}>
-        <video autoPlay loop muted playsInline preload="metadata" className={styles.video}>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          className={styles.video}
+        >
           <source src={videoFile} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
         <div className={styles.textOverlay}>
-          DIVYANSHU CREATES <br />
-          <span
-            style={{ fontFamily: "'Franklin Gothic Medium', 'Arial Narrow'" }}
-          >
+          <span>DIVYANSHUCREATES</span> <br />
+          <span>
             PHOTOGRAPHER <br />& FILMMAKER
           </span>
         </div>

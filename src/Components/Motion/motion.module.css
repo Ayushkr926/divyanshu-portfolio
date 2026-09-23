@@ -1,0 +1,12 @@
+
+
+.light{
+  background-color: #E4E1EC;
+  color: #1a4572;
+}
+
+.motionPage {
+  min-height: 100vh;
+  background: var(--surface);
+  color: var(--ink);
+}

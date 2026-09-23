@@ -4,7 +4,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   position: fixed;
   padding: 0px 24px;
   top: 0;
@@ -28,13 +28,17 @@
   display: flex;
   gap: 10px;
   align-items: center;
-  justify-content: center;
-  width: 25%;
+  justify-content: start;
+  width: 20%;
+  z-index: 2;
+  font-size: 12px;
+  font-weight: 200;
 }
 
 .right {
   position: relative;
   right: 70px;
+  justify-content: right;
 
 }
 
@@ -46,6 +50,7 @@
   width: 50%;
   position: relative;
   right: 20px;
+  z-index: 1;
 }
 
 .center a {
@@ -67,8 +72,8 @@
   border-radius: 20px;
   padding: 6px 14px;
   font-family: 'Mint Grotesk', sans-serif;
-  font-size: 11px;
-  font-weight: bold;
+  font-size: 10px;
+  font-weight: 400;
   display: flex;
   align-items: center;
   justify-content: center;

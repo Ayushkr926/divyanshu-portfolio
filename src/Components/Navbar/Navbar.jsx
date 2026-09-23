@@ -12,8 +12,8 @@ function Navbar({ darkMode, setDarkMode }) {
     >
       <div className={styles.left}>
         <Link to="/stills">STILLS</Link>
-        <Link to="/#motion">MOTION</Link>
-        <Link to="/story">About</Link>
+        <Link to="/motion">MOTION</Link>
+        <Link to="/story">ABOUT</Link>
       </div>
 
       <div className={styles.center}>

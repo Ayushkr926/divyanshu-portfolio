@@ -122,9 +122,6 @@ function ImageStrip() {
         ease: "none",
       });
 
-      return () => {
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      };
     }, wrapperRef);
 
     // Shuffle every 10 seconds

@@ -7,7 +7,6 @@ import Banaras from "../Banaras/Banaras";
 import Insta from "../insta/insta";
 
 import Header_stills from "./header/header";
-import Navbar from "../Navbar/Navbar";
 import Delhi from "../Delhi/delhi";
 import Mau from "../Mau/Mau";
 
@@ -24,11 +23,10 @@ function ScrollToTop() {
   return null;
 }
 
-function Stills({ darkMode, setDarkMode }) {
+function Stills({ darkMode }) {
   return (
     <div className={darkMode ? styles.dark : styles.light}>
       <ScrollToTop /> {/* ✅ Include this here */}
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Header_stills darkMode={darkMode} />
       <Praygraj darkMode={darkMode} />
       <Banaras darkMode={darkMode} />

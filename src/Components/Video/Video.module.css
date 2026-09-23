@@ -1,4 +1,23 @@
 /* Container */
+
+@font-face {
+  font-family: "Roslindale Display";
+  src: url("../../assets/font/roslindale-font-family/Roslindale-DisplayRegular-Testing.otf")
+       format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roslindale Condensed";
+  src: url("../../assets/font/roslindale-font-family/Roslindale-DisplayCondensedRegular-Testing.otf")
+       format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 .container {
   position: relative;
   width: 100%;
@@ -21,6 +40,11 @@ background-color: #E4E1EC;
 }
 
 /* Video Wrapper */
+
+
+
+
+
 .videoWrapper {
   width: 100%;
   height: 80%; /* Final video height */
@@ -37,25 +61,82 @@ background-color: #E4E1EC;
   height: 100%;
   border-radius: 25px;
   object-fit: cover;
+
+  animation: videoReveal 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform-origin: center bottom;
+}
+
+
+@keyframes videoReveal {
+  0% {
+    transform: scale(0.15);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* Text Overlay */
 .textOverlay {
   position: absolute;
-  color: white;
-  font-size: 5rem;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: bold;
+  color: #f3f6fa;
+  font-size: 65px;
+  font-family: 'Roslindale', serif;
+  font-weight: 400;
   text-align: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
+  text-transform: uppercase;
+  /* transform: translateX(-50%); */
+  overflow: hidden;
+}
+
+
+
+.textOverlay span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(110%);
+  animation: textReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.textOverlay span:nth-child(1) { animation-delay: 2.05s; }
+.textOverlay span:nth-child(2) { animation-delay: 2.12s; }
+.textOverlay span:nth-child(3) { animation-delay: 2.19s; }
+.textOverlay span:nth-child(4) { animation-delay: 2.35s; }
+.textOverlay span:nth-child(5) { animation-delay: 2.42s; }
+.textOverlay span:nth-child(6) { animation-delay: 2.49s; }
+
+@keyframes textReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Fix */
 @media (max-width: 768px) {
   .textOverlay {
     font-size: 3rem;
+  }
+
+  .revealText {
+    bottom: 1.5rem;
+    width: min(92%, 420px);
+    letter-spacing: 0.08em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video,
+  .revealText span {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

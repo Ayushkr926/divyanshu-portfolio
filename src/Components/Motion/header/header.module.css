@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Roslindale Display";
+  src: url("../../../assets/font/roslindale-font-family/Roslindale-DisplayRegular-Testing.otf")
+       format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roslindale Condensed";
+  src: url("../../../assets/font/roslindale-font-family/Roslindale-DisplayCondensedRegular-Testing.otf")
+       format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+.light{
+  background-color: #E4E1EC;
+  color: #1a4572;
+}
+
+.dark {
+  background-color: #0A0A0A;
+  color: white;
+}
+
+.motionHeader {
+  min-height: 100vh;
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  position: relative;
+  top:4rem;
+  row-gap: 0.75rem;
+  padding: clamp(9rem, 18vh, 16rem) 2rem 3rem;
+  text-align: center;
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.title {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(0.7rem, 8vw, 15rem);
+  font-family: "Roslindale Display", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.description {
+  max-width: 35rem;
+  margin: 0;
+  color: var(--muted);
+  font-family: "Roslindale Condensed", Georgia, serif;
+  font-size: clamp(1rem, 2.3vw, 1.5rem);
+  line-height: 1.35;
+}
+
+.descriptionLine {
+  display: block;
+  will-change: transform, opacity, filter;
+}

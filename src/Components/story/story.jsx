@@ -2,7 +2,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom"; // ✅ Make sure this is imported
 import styles from "./story.module.css";
-import Navbar from "../Navbar/Navbar";
 import Header from "./header/header";
 import ImageStrip from "./header/Image";
 import About from "./About/about";
@@ -20,12 +19,11 @@ function ScrollToTop() {
   return null;
 }
 
-function Story({ darkMode, setDarkMode }) {
+function Story({ darkMode }) {
   return (
     <div className={darkMode ? styles.dark : styles.light}>
       <ScrollToTop /> {/* ✅ Include this here */}
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Header darkMode={darkMode} />
       <ImageStrip />
       <About darkMode={darkMode} />
     </div>

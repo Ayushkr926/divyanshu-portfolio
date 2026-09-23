@@ -12,6 +12,8 @@ import Kumbh from "./Components/Kumbh/Kumbh";
 import Insta from "./Components/insta/insta";
 import Story from "./Components/story/story";
 import Stills from "./Components/stills/stills";
+import Motion from "./Components/Motion/motion";
+
 
 function ScrollToTop() {
   const location = useLocation();
@@ -23,10 +25,20 @@ function ScrollToTop() {
 }
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    return window.localStorage.getItem("portfolio-theme") === "dark";
+  });
+
+  useEffect(() => {
+    const theme = darkMode ? "dark" : "light";
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+    window.localStorage.setItem("portfolio-theme", theme);
+  }, [darkMode]);
 
   return (
     <div className={`${darkMode ? styles.dark : styles.light} ${styles.appShell}`}>
+      <ScrollToTop />
       <div className={styles.grain} aria-hidden="true" />
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Routes>
@@ -50,6 +62,10 @@ function App() {
         <Route
           path="/stills"
           element={<Stills darkMode={darkMode} setDarkMode={setDarkMode} />}
+        />
+        <Route
+          path="/motion/*"
+          element={<Motion darkMode={darkMode} />}
         />
       </Routes>
     </div>
