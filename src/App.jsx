@@ -1,7 +1,7 @@
 // src/App.jsx
 import { useState, useEffect } from "react";
 import styles from "./App.module.css";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 import Navbar from "./Components/Navbar/Navbar";
 import Video from "./Components/Video/Video";
@@ -66,6 +66,7 @@ function App() {
           path="/motion/*"
           element={<Motion darkMode={darkMode} />}
         />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Insta />
     </div>
