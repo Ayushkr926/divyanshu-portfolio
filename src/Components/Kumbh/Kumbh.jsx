@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import styles from "./kumbh.module.css";
 import mainimage from "../../assets/mahakumbh.jpg";
 import baba from "../../assets/baba.png";
@@ -118,7 +119,9 @@ function Kumbh({ darkMode }) {
           <img ref={maruti} src={bajrangbali} alt="bajrangbali" loading="lazy" />
         </div>
       </div>
-      <button className={styles.button}>SEE CASE STUDY</button>
+      <Link className={styles.button} to="/motion/maha-kumbh">
+        SEE CASE STUDY
+      </Link>
     </div>
   );
 }

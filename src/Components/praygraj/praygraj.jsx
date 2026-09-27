@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./praygraj.module.css";
@@ -60,7 +61,9 @@ function Praygraj({ darkMode }) {
     <div ref={textRef} className={styles.date}>
       <p ref={dateRef} className={styles.dateText}>JANUARY 2025 &nbsp;&nbsp;&nbsp;<svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 4L0 8V0L16 4Z" fill="currentColor" /></svg>&nbsp;&nbsp;&nbsp; PRAYGRAJ “The Sangam City”</p>
       <h1 ref={headingRef} className={styles.place}>Visit<br />Prayagraj</h1>
-      <button ref={buttonRef} className={styles.button}>SEE CASE STUDY</button>
+      <Link ref={buttonRef} className={styles.button} to="/motion/prayagraj">
+        SEE CASE STUDY
+      </Link>
     </div>
   </section>;
 }

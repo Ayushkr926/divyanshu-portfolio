@@ -1,0 +1,119 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  min-height: 38rem;
+  overflow: hidden;
+  padding: 2rem;
+  background: #0a0a0a;
+  color: inherit;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.imageWrapper {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  height: 250px;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark {
+  background: #0a0a0a;
+  color: #fff;
+}
+
+.light {
+  background: #e4e1ec;
+  color: #1a4572;
+}
+
+.image {
+  position: absolute;
+  width: auto;
+  height: 600px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 30%);
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+.leftImage {
+  z-index: 2;
+}
+
+.rightImage {
+  z-index: 1;
+}
+
+.date {
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+
+.dateText {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.arrow {
+  display: inline-block;
+  margin: 0 1rem;
+  font-size: 0.55rem;
+}
+
+.place {
+  margin: 1.25rem 0 2rem;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.35rem 0.6rem;
+  border: 2px solid currentColor;
+  border-radius: 25px;
+  color: inherit;
+  background: transparent;
+  font-size: 0.7rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.light .button:hover {
+  background: rgb(26 69 114 / 10%);
+}
+
+.dark .button:hover {
+  background: rgb(255 255 255 / 10%);
+}
+
+@media (max-width: 768px) {
+  .container {
+    min-height: 100svh;
+    padding: 1rem;
+  }
+
+  .image {
+    height: min(58svh, 440px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+}

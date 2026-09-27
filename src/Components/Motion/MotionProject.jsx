@@ -118,7 +118,7 @@ function MotionProject({ project, darkMode }) {
       </div>
 
       <div ref={collageRef} className={styles.collage}>
-        {project.images.map((image, index) => (
+        {project.images.slice(0, 4).map((image, index) => (
           <div
             key={image}
             ref={(element) => {

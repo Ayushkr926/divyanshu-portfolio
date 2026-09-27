@@ -1,103 +1,182 @@
-.container{
-    display: flex;
-    flex-direction: column;
+.container {
     width: 100%;
-    height: auto;
-    padding: 30px 0px;
-    justify-content: center;
-    align-items: center;
+    padding: 4.5rem clamp(1.25rem, 6vw, 6rem) 1.5rem;
+    color: var(--ink);
+    background: var(--surface);
 }
 
-.insta{
-    background-color: rgba(255, 255, 255, 0.397);
-    padding: 0px 20px;
-    border-radius: 20px;
-    cursor: pointer;
+:global(html[data-theme="light"]) .container {
+    background: #e4e1ec;
 }
 
-.dark .insta{
-    border:  2px dotted white;
-}
-.tag{
-    position: relative;
-    padding: 0px 9%;
+.footerTop {
     display: flex;
+    align-items: baseline;
     justify-content: space-between;
-    align-items: center;
-    width: 95%;
+    gap: 1.5rem;
+    padding-bottom: 1.1rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--ink) 24%, transparent);
 }
 
-
-.tag p{
-    font-size: 0.65rem;
-    font-weight: bold;
-    /* leter in uupercase */
-    text-transform: uppercase;
+.eyebrow,
+.invitation,
+.footerBottom p {
+    margin: 0;
 }
-.link{
+
+.eyebrow {
+    color: var(--accent);
+    font-family: "DM Mono", monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+}
+
+.invitation {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.contactRow {
     display: flex;
-    justify-content: space-around;
-    width: auto;
-    width: 20%;
-    position: relative;
-    left: 5%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 2rem 0 2.5rem;
 }
 
-.link a{
+.handle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em;
+    min-width: 0;
+    color: var(--ink);
+    font-family: "Roslindale Display", Georgia, serif;
+    font-size: 4.5rem;
+    line-height: 0.95;
     text-decoration: none;
-    border-radius: 25px;
-    color: white;
-    border-radius: 1px solid black;
+    overflow-wrap: anywhere;
+    transition: color 200ms ease;
 }
 
-.light .tag{
-    padding: 0px 20px;
-}
-.light .link a{
-    color: black;
-    border: 1px solid black;
-    padding: 3px 6px;
-}
-.dark .link a{
-    color: white;
-    border: 1px solid white;
-    padding: 3px 6px;
+.handle span {
+    align-self: flex-start;
+    color: var(--accent);
+    font-family: "Manrope", sans-serif;
+    font-size: 1.1rem;
 }
 
-.copy{
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
-  justify-content: center;
-  width: 100%;
-  height: 20px;
-  gap: 10px;
-  /* background-color: red; */
-  overflow: hidden;
-  
-}
-.copy p{
-  font-size: 0.7rem;
-  font-weight: bold;
-  color: black;
-
-  text-align: center;
-  transition: all 0.3s ease-in-out;
-  position: relative;
-  top: 135%;
-  margin-bottom: 15px;
-}
-.copy span{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
-  width: 100%;
+.handle:hover {
+    color: var(--accent);
 }
 
-.copy p {
-  transition: all 0.3s ease-in-out;
-  font-size: 0.7rem;
+.copyButton {
+    flex: 0 0 auto;
+    min-height: 3rem;
+    padding: 0.75rem 1.1rem;
+    border: 1px solid color-mix(in srgb, var(--ink) 45%, transparent);
+    border-radius: 999px;
+    color: var(--ink);
+    background: transparent;
+    cursor: pointer;
+    font-family: "DM Mono", monospace;
+    font-size: 0.68rem;
+    transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease;
+}
 
+.copyButton:hover {
+    border-color: var(--accent);
+    color: var(--surface);
+    background: var(--accent);
+}
+
+.footerBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid color-mix(in srgb, var(--ink) 24%, transparent);
+    color: var(--muted);
+    font-family: "DM Mono", monospace;
+    font-size: 0.64rem;
+}
+
+.socialLinks {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+.socialLinks a {
+    color: var(--ink);
+    text-decoration: none;
+    transition: color 180ms ease;
+}
+
+.socialLinks a:hover {
+    color: var(--accent);
+}
+
+.credits {
+    text-align: right;
+}
+
+.credits strong {
+    color: var(--ink);
+    font-weight: 500;
+}
+
+@media (max-width: 760px) {
+    .container {
+        padding-top: 3.5rem;
+    }
+
+    .handle {
+        font-size: 3rem;
+    }
+
+    .footerBottom {
+        display: grid;
+        grid-template-columns: 1fr auto;
+    }
+
+    .credits {
+        grid-column: 1 / -1;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .footerTop {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.55rem;
+    }
+
+    .contactRow {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .handle {
+        font-size: 2.25rem;
+    }
+
+    .footerBottom {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .credits {
+        grid-column: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .handle,
+    .copyButton,
+    .socialLinks a {
+        transition: none;
+    }
 }

@@ -2,13 +2,10 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom"; // ✅ Make sure this is imported
 import styles from "./stills.module.css";
-import Praygraj from "../praygraj/praygraj";
-import Banaras from "../Banaras/Banaras";
-import Insta from "../insta/insta";
 
 import Header_stills from "./header/header";
-import Delhi from "../Delhi/delhi";
-import Mau from "../Mau/Mau";
+import TravelStill from "./TravelStill";
+import { stillProjects } from "./stillProjects";
 
 function ScrollToTop() {
   const location = useLocation();
@@ -28,11 +25,9 @@ function Stills({ darkMode }) {
     <div className={darkMode ? styles.dark : styles.light}>
       <ScrollToTop /> {/* ✅ Include this here */}
       <Header_stills darkMode={darkMode} />
-      <Praygraj darkMode={darkMode} />
-      <Banaras darkMode={darkMode} />
-      <Delhi darkMode={darkMode} />
-      <Mau darkMode={darkMode} />
-      <Insta darkMode={darkMode} />
+      {stillProjects.map((project) => (
+        <TravelStill key={project.slug} project={project} darkMode={darkMode} />
+      ))}
     </div>
   );
 }

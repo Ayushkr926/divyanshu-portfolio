@@ -67,6 +67,7 @@
 }
 
 .button {
+  display: inline-block;
   padding: 5px 5px;
   font-size: 0.7rem;
   font-weight: 400;
@@ -75,6 +76,7 @@
   border: 2px solid #1a4572;
   border-radius: 25px;
   cursor: pointer;
+  text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 

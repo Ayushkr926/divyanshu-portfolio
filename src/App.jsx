@@ -51,7 +51,6 @@ function App() {
               <Praygraj darkMode={darkMode} setDarkMode={setDarkMode} />
               <Banaras darkMode={darkMode} setDarkMode={setDarkMode} />
               <Kumbh darkMode={darkMode} setDarkMode={setDarkMode} />
-              <Insta darkMode={darkMode} setDarkMode={setDarkMode} />
             </>
           }
         />
@@ -68,6 +67,7 @@ function App() {
           element={<Motion darkMode={darkMode} />}
         />
       </Routes>
+      <Insta />
     </div>
   );
 }
